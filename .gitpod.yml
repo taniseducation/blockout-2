@@ -6,7 +6,7 @@ ports:
 tasks:
 - name: Terminal
   init: >
-    mysql -e "CREATE DATABASE IF NOT EXIST scoreboard;" &&
+    mysql -e "CREATE DATABASE IF NOT EXISTS scoreboard;" &&
     mysql scoreboard < scoreboard.sql
   command: >
     echo "";
