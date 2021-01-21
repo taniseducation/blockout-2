@@ -5,6 +5,9 @@ ports:
   onOpen: open-preview
 tasks:
 - name: Terminal
+  init: >
+    mysql -e "CREATE DATABASE IF NOT EXIST scoreboard;" &&
+    mysql scoreboard < scoreboard.sql
   command: >
     echo "";
     echo "Commands you can try:";
