@@ -5,10 +5,10 @@ ports:
   onOpen: open-preview
 tasks:
 - name: Terminal
-  init: >
-    mysql -e "CREATE DATABASE IF NOT EXISTS scoreboard;" &&
-    mysql scoreboard < scoreboard.sql
   command: >
+    echo "Creating database...";
+    mysql -e "CREATE DATABASE IF NOT EXISTS scoreboard;"
+    echo "Database created.";
     echo "";
     echo "Commands you can try:";
     echo " * apachectl stop";
