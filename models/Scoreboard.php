@@ -47,6 +47,9 @@
         $ipAddress = 'UNKNOWN';
       } 
 
+      if(strpos($ipAddress, ",")) {
+        return explode(",", $ipAddress)[0];
+      }
       return $ipAddress;
     }
 
@@ -56,7 +59,7 @@
       if($this->ipAddress == 'UNKNOWN') {
         return 'UNKWON';
       } else {
-        $ipData = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=$this->ipAddress")); 
+        $ipData = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=".urlencode($this->ipAddress))); 
         return $ipData->geoplugin_countryName;
       }
     }
@@ -67,7 +70,7 @@
       if($this->ipAddress == 'UNKNOWN') {
         return 'UNKWON';
       } else {
-        $ipData = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=$this->ipAddress")); 
+        $ipData = @json_decode(file_get_contents("http://www.geoplugin.net/json.gp?ip=".urlencode($this->ipAddress)));
         return $ipData->geoplugin_city;
       }
     }
