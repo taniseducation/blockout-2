@@ -36,7 +36,7 @@ CREATE TABLE `scoreboard` (
   `playerScore` int(11) DEFAULT NULL,
   `playedAt` timestamp NOT NULL DEFAULT current_timestamp(),
   `countryName` varchar(255) DEFAULT NULL,
-  `cityName` varchar(255) NOT NULL,
+  `cityName` varchar(255) DEFAULT NULL,
   `ipAddress` varchar(20) DEFAULT NULL,
   `PC_Phone` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
